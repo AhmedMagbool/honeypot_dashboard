@@ -1,149 +1,94 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>🛡️ Honeypot Security Dashboard</title>
-  <link rel="stylesheet" href="style.css" />
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <title>Admin Login</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      background: #0f1117;
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+    }
+
+    .login-box {
+      background-color: #fff;
+      color: #333;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 320px;
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 20px;
+      color: #0f1117;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 20px;
+      background-color: #0f1117;
+      border: none;
+      color: white;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #013c3a;
+    }
+
+    .error {
+      color: #e74c3c;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="dashboard-header">
-    <div class="header-content">
-      <div class="logo-section">
-        <i class="fas fa-shield-alt"></i>
-        <h1>🛡️ Honeypot Security Dashboard</h1>
-      </div>
-      <div class="header-actions">
-        <div class="status-indicator">
-          <span class="status-dot active"></span>
-          <span>Active</span>
-        </div>
-        <button onclick="logout()" class="logout-btn">
-          <i class="fas fa-sign-out-alt"></i>
-          Logout
-        </button>
-      </div>
-    </div>
-  </header>
-
-  <!-- Stats Cards -->
-  <div class="stats-container">
-    <div class="stat-card">
-      <div class="stat-icon">
-        <i class="fas fa-exclamation-triangle"></i>
-      </div>
-      <div class="stat-content">
-        <h3 id="total-attacks">0</h3>
-        <p>Total Attacks</p>
-      </div>
-    </div>
-    
-    <div class="stat-card">
-      <div class="stat-icon">
-        <i class="fas fa-globe"></i>
-      </div>
-      <div class="stat-content">
-        <h3 id="unique-ips">0</h3>
-        <p>Unique IP Addresses</p>
-      </div>
-    </div>
-    
-    <div class="stat-card">
-      <div class="stat-icon">
-        <i class="fas fa-bug"></i>
-      </div>
-      <div class="stat-content">
-        <h3 id="attack-types">0</h3>
-        <p>Attack Types</p>
-      </div>
-    </div>
-    
-    <div class="stat-card">
-      <div class="stat-icon">
-        <i class="fas fa-clock"></i>
-      </div>
-      <div class="stat-content">
-        <h3 id="last-attack">--</h3>
-        <p>Last Attack</p>
-      </div>
-    </div>
+  <div class="login-box">
+    <h2>Admin Dashboard Login</h2>
+    <input type="text" id="username" placeholder="Username" />
+    <input type="password" id="password" placeholder="Password" />
+    <button onclick="login()">Login</button>
+    <div class="error" id="error"></div>
   </div>
 
-  <!-- Attack Types Analysis -->
-  <div class="analysis-section">
-    <h2><i class="fas fa-chart-pie"></i> Attack Types Analysis</h2>
-    <div class="attack-types-grid" id="attack-types-grid">
-      <!-- Attack type cards will be inserted here -->
-    </div>
-  </div>
+  <script>
+    function login() {
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value.trim();
 
-  <!-- Controls -->
-  <div class="controls-section">
-    <div class="control-group">
-      <button id="toggleChart" class="control-btn">
-        <i class="fas fa-chart-line"></i>
-        Toggle Chart Type
-      </button>
-      <button id="refreshData" class="control-btn">
-        <i class="fas fa-sync-alt"></i>
-        Refresh Data
-      </button>
-      <button id="exportData" class="control-btn">
-        <i class="fas fa-download"></i>
-        Export Data
-      </button>
-    </div>
-  </div>
-
-  <!-- Chart Section -->
-  <div class="chart-section">
-    <h2><i class="fas fa-chart-bar"></i> Attack Analytics Chart</h2>
-    <canvas id="attackChart"></canvas>
-  </div>
-
-  <!-- Logs Table -->
-  <div class="table-section">
-    <div class="table-header">
-      <h2><i class="fas fa-list"></i> Live Attack Logs</h2>
-      <div class="table-controls">
-        <input type="text" id="searchInput" placeholder="Search logs..." class="search-input">
-        <select id="filterAttackType" class="filter-select">
-          <option value="">All Attack Types</option>
-        </select>
-      </div>
-    </div>
-    
-    <div class="table-container">
-      <table class="logs-table">
-        <thead>
-          <tr>
-            <th><i class="fas fa-globe"></i> IP Address</th>
-            <th><i class="fas fa-plug"></i> Port</th>
-            <th><i class="fas fa-code"></i> Payload Data</th>
-            <th><i class="fas fa-bug"></i> Attack Type</th>
-            <th><i class="fas fa-clock"></i> Timestamp</th>
-            <th><i class="fas fa-shield-alt"></i> Risk Level</th>
-          </tr>
-        </thead>
-        <tbody id="log-table-body">
-          <!-- Logs will be inserted here -->
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <!-- Loading Overlay -->
-  <div id="loadingOverlay" class="loading-overlay">
-    <div class="loading-spinner">
-      <i class="fas fa-spinner fa-spin"></i>
-      <p>Loading data...</p>
-    </div>
-  </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script type="module" src="script.js" defer></script>
-  <script src="chart.js"></script>
+      if (user === 'admin' && pass === '1234') {
+        localStorage.setItem('isLoggedIn', 'true');
+        window.location.href = 'Dashboard.html';
+      } else {
+        document.getElementById('error').innerText = '❌ Invalid username or password';
+      }
+    }
+  </script>
 </body>
 </html>
