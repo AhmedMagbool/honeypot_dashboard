@@ -1,0 +1,84 @@
+[2025-07-30 11:38:01.375165] Connection from 127.0.0.1:2061 - Data: abdulmajed
+[2025-07-30 11:38:52.010018] Connection from 127.0.0.1:2112 - Data: d
+[2025-07-30 11:47:06.165047] Connection from 127.0.0.1:2491 - Data: samy
+[2025-07-30 11:48:32.065035] Connection from 127.0.0.1:2565 - Data: ss
+[2025-07-30 12:14:44.276503] Connection from 127.0.0.1:3564 - Data: POST / HTTP/1.1
+Host: localhost:2222
+Connection: keep-alive
+Content-Length: 6
+sec-ch-ua-platform: "Windows"
+User-Agent: Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+sec-ch-ua: "Not)A;Brand";v="8", "Chromium";v="138", "Brave";v="138"
+Content-Type: text/plain;charset=UTF-8
+sec-ch-ua-mobile: ?0
+Accept: */*
+Sec-GPC: 1
+Accept-Language: en-US,en;q=0.5
+Origin: http://127.0.0.1:5502
+Sec-Fetch-Site: cross-site
+Sec-Fetch-Mode: cors
+Sec-Fetch-Dest: empty
+Referer: http://127.0.0.1:5502/
+Accept-Encoding: gzip, deflate, br, zstd
+
+aas:ww
+[2025-07-30 12:15:56.865591] Connection from 127.0.0.1:3569 - Data: 
+[2025-08-06 21:04:14.205281] Connection from 127.0.0.1:17567 - Data: aa
+[2025-08-06 21:11:36.542462] Connection from 127.0.0.1:18249 - Data: sdsdd
+[2025-08-06 21:14:39.496863] Connection from 127.0.0.1:18586 - Data: dddddd
+[2025-08-06 21:14:46.093300] Connection from 127.0.0.1:18586 - Data: dddddd
+[2025-08-06 21:18:40] Connection from 127.0.0.1:19085 - Payload: aaa
+[2025-08-06 21:26:20.764530] Connection from 127.0.0.1:19793 - Data: ss - Attack Type: Unknown
+[2025-08-06 21:26:44.837965] Connection from 127.0.0.1:19839 - Data: ffffff - Attack Type: Unknown
+[2025-08-06 21:57:26.447183] Connection from 127.0.0.1:22461 - Data: aaaaa - Attack Type: Unknown
+[2025-08-06 21:58:31.970149] Connection from 127.0.0.1:22560 - Data:  - Attack Type: Empty Payload
+[2025-08-06 22:04:38.694126] Connection from 127.0.0.1:23074 - Data: <EMPTY> - Attack Type: Unknown
+[2025-08-06 22:05:32.434842] Connection from 127.0.0.1:23142 - Data: www - Attack Type: Unknown
+[2025-08-06 22:07:41.503525] Connection from 127.0.0.1:23322 - Data: fff - Attack Type: Unknown
+[2025-08-06 22:08:10.508214] Connection from 127.0.0.1:23367 - Data: <NO PAYLOAD> - Attack Type: Unknown
+[2025-08-06 22:18:46.967551] Connection from 127.0.0.1:24369 - Data: GET / HTTP/1.1
+Host: 127.0.0.1:2222
+User-Agent: curl/8.11.1
+Accept: */* - Attack Type: Command Injection
+[2025-08-06 22:18:52.644664] Connection from 127.0.0.1:24389 - Data: GET / HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.3624
+Host: 127.0.0.1:2222
+Connection: Keep-Alive - Attack Type: Command Injection
+[2025-08-06 22:19:49.042344] Connection from 127.0.0.1:24505 - Data: <NO PAYLOAD> - Attack Type: Unknown
+[2025-08-06 22:20:28.108854] Connection from 127.0.0.1:24593 - Data: GET / HTTP/1.1
+Host: 127.0.0.1:2222
+User-Agent: curl/8.11.1
+Accept: */* - Attack Type: Command Injection
+[2025-08-06 22:21:54.427087] Connection from 127.0.0.1:24703 - Data: vv - Attack Type: Unknown
+[2025-08-06 22:24:35.945746] Connection from 127.0.0.1:24910 - Data: GET / HTTP/1.1
+Host: 127.0.0.1:2222
+User-Agent: curl/8.11.1
+Accept: */* - Attack Type: Curl Request
+[2025-08-06 22:25:07.257376] Connection from 127.0.0.1:24950 - Data: ggggggg - Attack Type: Unknown
+[2025-08-06 22:25:31.800440] Connection from 127.0.0.1:24994 - Data: <NO PAYLOAD> - Attack Type: Unknown
+[2025-08-06 22:28:16.031087] Connection from 127.0.0.1:25203 - Data: ?? - Attack Type: Unknown
+[2025-08-06 22:38:58.639944] Connection from 127.0.0.1:25999 - Data: GET / HTTP/1.1
+Host: 127.0.0.1:2222
+User-Agent: curl/8.11.1
+Accept: */* - Attack Type: Curl Request
+[2025-08-06 22:39:29.591986] Connection from 127.0.0.1:26045 - Data: <NO PAYLOAD> - Attack Type: Unknown
+[2025-08-06 22:40:17.446584] Connection from 127.0.0.1:26078 - Data: ?? - Attack Type: Unknown
+[2025-08-06 22:41:53.141157] Connection from 127.0.0.1:26226 - Data: GET / HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.3624
+Host: 127.0.0.1:2222
+Connection: Keep-Alive - Attack Type: Command Injection
+[2025-08-15 19:44:22.672833] Connection from 127.0.0.1:21949 - Data: aa - Attack Type: Unknown
+[2025-08-15 19:54:22.931663] Connection from 127.0.0.1:22526 - Data: dd - Attack Type: Unknown
+[2025-08-15 19:56:05.445514] Connection from 127.0.0.1:22619 - Data: fffffffffff - Attack Type: Suspicious Activity
+[2025-08-15 19:56:47.794635] Connection from 127.0.0.1:22660 - Data: GET / HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4061
+Host: 127.0.0.1:2222
+Connection: Keep-Alive - Attack Type: Command Injection - PowerShell
+[2025-08-15 19:57:10.918060] Connection from 127.0.0.1:22685 - Data: GET / HTTP/1.1
+User-Agent: Mozilla/5.0 (Windows NT; Windows NT 10.0; en-US) WindowsPowerShell/5.1.26100.4061
+Host: 127.0.0.1:2222
+Connection: Keep-Alive - Attack Type: Command Injection - PowerShell
+[2025-08-15 19:59:08.003218] Connection from 127.0.0.1:22773 - Data: GET / HTTP/1.1
+Host: 127.0.0.1:2222
+User-Agent: curl/8.12.1
+Accept: */* - Attack Type: Curl Request
