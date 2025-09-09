@@ -1,4 +1,4 @@
-// Firebase config
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js"
 import { getDatabase, ref, onValue } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js"
 
@@ -15,18 +15,18 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig)
 const db = getDatabase(app)
 
-// Global variables
+
 let allLogs = []
 let filteredLogs = []
 let attackTypesData = {}
 
-// DOM elements
+
 const tableBody = document.getElementById("log-table-body")
 const searchInput = document.getElementById("searchInput")
 const filterSelect = document.getElementById("filterAttackType")
 const loadingOverlay = document.getElementById("loadingOverlay")
 
-// Enhanced attack type detection with risk levels
+
 function getAttackTypeInfo(attackType) {
   const attackTypes = {
     "SQL Injection": { risk: "high", icon: "fas fa-database", color: "#ff6b6b" },
@@ -46,7 +46,7 @@ function getAttackTypeInfo(attackType) {
   return attackTypes[attackType] || attackTypes["Unknown"]
 }
 
-// Show/hide loading overlay
+
 function showLoading() {
   loadingOverlay.classList.add("active")
 }
@@ -55,7 +55,7 @@ function hideLoading() {
   loadingOverlay.classList.remove("active")
 }
 
-// Update statistics
+
 function updateStats() {
   const totalAttacks = allLogs.length
   const uniqueIPs = new Set(allLogs.map((log) => log.ip)).size
@@ -68,7 +68,7 @@ function updateStats() {
   document.getElementById("last-attack").textContent = lastAttack
 }
 
-// Update attack types analysis
+
 function updateAttackTypesAnalysis() {
   attackTypesData = {}
   allLogs.forEach((log) => {
@@ -93,8 +93,8 @@ function updateAttackTypesAnalysis() {
       grid.appendChild(card)
     })
 
-  // Update filter dropdown
-  filterSelect.innerHTML = '<option value="">All Attack Types</option>'
+
+    filterSelect.innerHTML = '<option value="">All Attack Types</option>'
   Object.keys(attackTypesData)
     .sort()
     .forEach((type) => {
@@ -105,7 +105,7 @@ function updateAttackTypesAnalysis() {
     })
 }
 
-// Format payload for display
+
 function formatPayload(payload) {
   if (!payload || payload === "<NO PAYLOAD>") return "No Data"
   if (payload.length > 100) {
@@ -114,7 +114,7 @@ function formatPayload(payload) {
   return payload
 }
 
-// Render table rows
+
 function renderTable(logs = filteredLogs) {
   tableBody.innerHTML = ""
 
@@ -140,7 +140,7 @@ function renderTable(logs = filteredLogs) {
   })
 }
 
-// Filter and search functionality
+
 function applyFilters() {
   const searchTerm = searchInput.value.toLowerCase()
   const selectedType = filterSelect.value
@@ -160,7 +160,7 @@ function applyFilters() {
   renderTable()
 }
 
-// Export data functionality
+
 function exportData() {
   const dataStr = JSON.stringify(allLogs, null, 2)
   const dataBlob = new Blob([dataStr], { type: "application/json" })
@@ -172,7 +172,7 @@ function exportData() {
   URL.revokeObjectURL(url)
 }
 
-// Event listeners
+
 searchInput.addEventListener("input", applyFilters)
 filterSelect.addEventListener("change", applyFilters)
 document.getElementById("refreshData").addEventListener("click", () => {
@@ -181,16 +181,16 @@ document.getElementById("refreshData").addEventListener("click", () => {
 })
 document.getElementById("exportData").addEventListener("click", exportData)
 
-// Logout function
+
 function logout() {
   localStorage.removeItem("isLoggedIn")
   window.location.href = "admin-login.html"
 }
 
-// Make logout function global
+
 window.logout = logout
 
-// Listen to realtime data from Firebase
+
 const logRef = ref(db, "honeypot_logs")
 showLoading()
 
@@ -198,7 +198,7 @@ onValue(logRef, (snapshot) => {
   const logs = snapshot.val()
 
   if (logs) {
-    allLogs = Object.values(logs).reverse() // Most recent first
+    allLogs = Object.values(logs).reverse() 
     filteredLogs = [...allLogs]
 
     updateStats()
@@ -219,7 +219,7 @@ onValue(logRef, (snapshot) => {
   hideLoading()
 })
 
-// Check authentication
+
 if (!localStorage.getItem("isLoggedIn")) {
   window.location.href = "admin-login.html"
 }

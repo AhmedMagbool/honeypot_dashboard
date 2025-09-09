@@ -9,10 +9,10 @@ body {
   background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
   color: #ffffff;
   min-height: 100vh;
-  direction: ltr; /* Changed direction from rtl to ltr for English */
+  direction: ltr; 
 }
 
-/* Header Styles */
+
 .dashboard-header {
   background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(10px);
@@ -174,7 +174,7 @@ body {
   font-size: 0.9rem;
 }
 
-/* Analysis Section */
+
 .analysis-section {
   padding: 2rem;
   max-width: 1400px;
@@ -221,7 +221,7 @@ body {
   color: #4ecdc4;
 }
 
-/* Controls Section */
+
 .controls-section {
   padding: 0 2rem 2rem;
   max-width: 1400px;
@@ -253,7 +253,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* Chart Section */
+
 .chart-section {
   padding: 2rem;
   max-width: 1400px;
@@ -277,7 +277,7 @@ body {
   max-height: 400px;
 }
 
-/* Table Section */
+
 .table-section {
   padding: 2rem;
   max-width: 1400px;
@@ -347,7 +347,7 @@ body {
 .logs-table th {
   background: rgba(255, 255, 255, 0.1);
   padding: 1rem;
-  text-align: left; /* Changed text alignment from right to left for English */
+  text-align: left; 
   font-weight: 600;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -397,7 +397,7 @@ body {
   border: 1px solid #4caf50;
 }
 
-/* Loading Overlay */
+
 .loading-overlay {
   position: fixed;
   top: 0;
@@ -429,7 +429,7 @@ body {
   margin-bottom: 1rem;
 }
 
-/* Responsive Design */
+
 @media (max-width: 768px) {
   .header-content {
     flex-direction: column;

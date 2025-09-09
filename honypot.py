@@ -8,12 +8,12 @@ import time
 import re
 import base64
 
-# ------------------------ CONFIGURATION ------------------------ #
+
 LOG_FILE = "honeypot_logs.txt"
 HOST = "0.0.0.0"
 PORT = 2222
 
-FROM_EMAIL = "aalageely@gmail.com"
+FROM_EMAIL = "danaalageely@gmail.com"
 TO_EMAIL = "danaalageely@gmail.com"
 APP_PASSWORD = "mkbc nxsa upag uqzs"
 
@@ -22,7 +22,7 @@ CHAT_ID = "1919975349"
 
 FIREBASE_URL = "https://honeypot-715b9-default-rtdb.firebaseio.com/honeypot_logs.json"
 
-# ------------------------ ATTACK DETECTION ------------------------ #
+
 def detect_attack(payload):
     if not payload or payload.strip() == "":
         return "Empty Connection"
@@ -222,20 +222,20 @@ def detect_attack(payload):
     
     return "Suspicious Activity"
 
-# ------------------------ ALERT FUNCTIONS ------------------------ #
+
 def send_email_alert(ip, port, data, attack_type):
     msg = EmailMessage()
     msg["Subject"] = f"🚨 Honeypot Alert - {attack_type} Detected"
     msg["From"] = FROM_EMAIL
     msg["To"] = TO_EMAIL
     msg.set_content(f"""
-🚨 Suspicious activity detected on the honeypot:
+ Suspicious activity detected on the honeypot:
 
-📍 IP Address: {ip}
-📌 Port: {port}
-💥 Attack Type: {attack_type}
-🕒 Timestamp: {datetime.datetime.now().strftime('%m/%d/%Y %I:%M:%S %p')}
-🧾 Payload: {data.strip()}
+ IP Address: {ip}
+ Port: {port}
+ Attack Type: {attack_type}
+ Timestamp: {datetime.datetime.now().strftime('%m/%d/%Y %I:%M:%S %p')}
+ Payload: {data.strip()}
 """)
     try:
         with smtplib.SMTP_SSL("smtp.gmail.com", 465) as smtp:
@@ -248,11 +248,11 @@ def send_email_alert(ip, port, data, attack_type):
 def send_telegram_alert(ip, port, data, attack_type):
     message = f"""🚨 *Honeypot Alert Detected*
 
-🔍 *IP:* `{ip}`
-🔌 *Port:* `{port}`
-💥 *Attack Type:* `{attack_type}`
-🕒 *Time:* `{datetime.datetime.now().strftime('%m/%d/%Y %I:%M:%S %p')}`
-🧾 *Payload:* `{data.strip()}`"""
+ *IP:* `{ip}`
+ *Port:* `{port}`
+ *Attack Type:* `{attack_type}`
+ *Time:* `{datetime.datetime.now().strftime('%m/%d/%Y %I:%M:%S %p')}`
+ *Payload:* `{data.strip()}`"""
 
     url = f"https://api.telegram.org/bot{TELEGRAM_TOKEN}/sendMessage"
     payload = {
@@ -287,7 +287,7 @@ def send_to_firebase(ip, port, data, attack_type):
     except Exception as e:
         print(f"[\u2716] Firebase error: {e}")
 
-# ------------------------ LOGGING FUNCTION ------------------------ #
+
 def log_attempt(addr, data, attack_type):
     timestamp = datetime.datetime.now()
     log = f"[{timestamp}] Connection from {addr[0]}:{addr[1]} - Data: {data.strip()} - Attack Type: {attack_type}"
@@ -300,7 +300,7 @@ def log_attempt(addr, data, attack_type):
     send_telegram_alert(addr[0], addr[1], data, attack_type)
     send_to_firebase(addr[0], addr[1], data, attack_type)
 
-# ------------------------ CLIENT HANDLER ------------------------ #
+
 def handle_client(client_socket, addr):
     client_socket.sendall(b"SSH-2.0-OpenSSH_7.9p1 Debian\n")
     try:
@@ -319,7 +319,7 @@ def handle_client(client_socket, addr):
 
     client_socket.close()
 
-# ------------------------ MAIN HONEYPOT ------------------------ #
+
 def start_honeypot():
     server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
     server.bind((HOST, PORT))

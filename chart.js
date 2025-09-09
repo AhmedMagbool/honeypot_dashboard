@@ -1,10 +1,10 @@
-// const { Chart } from "@/components/ui/chart" // Removed import statement
+
 const ctx = document.getElementById("attackChart").getContext("2d")
 let currentView = "perDay"
 let currentType = "bar"
 let chart
 
-// Enhanced grouping functions
+
 function groupByDay(data) {
   const map = {}
   data.forEach((entry) => {
@@ -75,15 +75,15 @@ function groupByHour(data) {
   return map
 }
 
-// Enhanced chart rendering with better colors and styling
+
 function renderChart(groupedData, label) {
   const labels = Object.keys(groupedData)
   const values = Object.values(groupedData)
 
   if (chart) chart.destroy()
 
-  // Color schemes for different chart types
-  const colorSchemes = {
+
+    const colorSchemes = {
     perDay: {
       background: "rgba(255, 107, 107, 0.2)",
       border: "rgba(255, 107, 107, 1)",
@@ -219,7 +219,7 @@ function renderChart(groupedData, label) {
   })
 }
 
-// Enhanced toggle functionality with multiple views
+
 let viewIndex = 0
 const views = [
   { key: "perDay", label: "Daily Attacks", groupFn: groupByDay },
@@ -228,7 +228,7 @@ const views = [
   { key: "perHour", label: "Attacks by Hour", groupFn: groupByHour },
 ]
 
-// Wait for Firebase data to load from script.js
+
 window.addEventListener("firebaseDataLoaded", (event) => {
   const entries = event.detail.data
   if (!entries || entries.length === 0) return
@@ -237,9 +237,9 @@ window.addEventListener("firebaseDataLoaded", (event) => {
   const grouped = views[0].groupFn(entries)
   renderChart(grouped, views[0].label)
 
-  // Enhanced toggle button functionality
+
   document.getElementById("toggleChart").addEventListener("click", () => {
-    // Cycle through chart types first, then views
+
     if (currentType === "bar") {
       currentType = "line"
     } else if (currentType === "line") {
