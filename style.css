@@ -37,9 +37,11 @@ body {
   gap: 1rem;
 }
 
-.logo-section i {
-  font-size: 2rem;
-  color: #ff6b6b;
+.logo-section img {
+ height: 40px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
 }
 
 .logo-section h1 {

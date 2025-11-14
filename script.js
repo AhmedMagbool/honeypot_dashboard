@@ -28,20 +28,41 @@ const loadingOverlay = document.getElementById("loadingOverlay")
 
 
 function getAttackTypeInfo(attackType) {
-  const attackTypes = {
-    "SQL Injection": { risk: "high", icon: "fas fa-database", color: "#ff6b6b" },
-    "XSS Attack": { risk: "high", icon: "fas fa-code", color: "#ff6b6b" },
-    "Command Injection": { risk: "high", icon: "fas fa-terminal", color: "#ff6b6b" },
-    "Curl Request": { risk: "medium", icon: "fas fa-download", color: "#ffc107" },
-    "Wget Request": { risk: "medium", icon: "fas fa-download", color: "#ffc107" },
-    "Port Scan / Recon Tool": { risk: "medium", icon: "fas fa-search", color: "#ffc107" },
-    "Brute Force Attempt": { risk: "high", icon: "fas fa-key", color: "#ff6b6b" },
-    "Web Shell Probe": { risk: "high", icon: "fas fa-bug", color: "#ff6b6b" },
-    "Basic HTTP Probe": { risk: "low", icon: "fas fa-globe", color: "#4caf50" },
-    "Binary Payload / Encoded Probe": { risk: "medium", icon: "fas fa-file-code", color: "#ffc107" },
-    Unknown: { risk: "low", icon: "fas fa-question", color: "#6c757d" },
-    "No Payload": { risk: "low", icon: "fas fa-minus", color: "#6c757d" },
-  }
+ const attackTypes = {
+  "SQL Injection": { risk: "high", icon: "fas fa-database", color: "#ffc107" },
+  "XSS Attack": { risk: "high", icon: "fas fa-code", color: "#ffc107" },
+  "Command Injection": { risk: "high", icon: "fas fa-terminal", color: "#ffc107" },
+  "Command Injection - PowerShell": { risk: "high", icon: "fas fa-terminal", color: "#ffc107" },
+  "Command Injection - Directory Listing": { risk: "high", icon: "fas fa-folder-open", color: "#ffc107" },
+  "Command Injection - Identity Discovery": { risk: "high", icon: "fas fa-user-secret", color: "#ffc107" },
+
+  "Curl Request": { risk: "medium", icon: "fas fa-download", color: "#ffc107" },
+  "Curl - POST Data": { risk: "medium", icon: "fas fa-upload", color: "#ffc107" },
+  "Wget Request": { risk: "medium", icon: "fas fa-download", color: "#ffc107" },
+
+  "Port Scan / Recon Tool": { risk: "medium", icon: "fas fa-search", color: "#ffc107" },
+  "Short Probe": { risk: "medium", icon: "fas fa-binoculars", color: "#ffc107" },
+  "Network Probe": { risk: "medium", icon: "fas fa-wifi", color: "#ffc107" },
+
+  "Brute Force Attempt": { risk: "high", icon: "fas fa-key", color: "#ffc107" },
+  "Authentication Probe": { risk: "high", icon: "fas fa-lock", color: "#ffc107" },
+
+  "SSH Connection - SSH-2.0-admin:admin123": { risk: "high", icon: "fas fa-user-ninja", color: "#ffc107" },
+  "SSH Connection - SSH-2.0-OpenSSH_8.2": { risk: "medium", icon: "fas fa-server", color: "#ffc107" },
+
+  "Web Shell Probe": { risk: "high", icon: "fas fa-bug", color: "#ffc107" },
+
+  "Basic HTTP Probe": { risk: "low", icon: "fas fa-globe", color: "#ffc107" },
+
+  "Binary Payload / Encoded Probe": { risk: "medium", icon: "fas fa-file-code", color: "#ffc107" },
+  "Empty Payload": { risk: "low", icon: "fas fa-file", color: "#ffc107" },
+  "Brute Force": { risk: "high", icon: "fas fa-key", color: "#ffc107" },
+
+  Unknown: { risk: "low", icon: "fas fa-question", color: "#ffc107" },
+  "Suspicious Activity": { risk: "medium", icon: "fas fa-exclamation-triangle", color: "#ffc107" },
+  "No Payload": { risk: "low", icon: "fas fa-minus", color: "#ffc107" }
+};
+
 
   return attackTypes[attackType] || attackTypes["Unknown"]
 }
