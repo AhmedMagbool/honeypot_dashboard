@@ -82,3 +82,71 @@ Connection: Keep-Alive - Attack Type: Command Injection - PowerShell
 Host: 127.0.0.1:2222
 User-Agent: curl/8.12.1
 Accept: */* - Attack Type: Curl Request
+[2025-11-18 19:21:49.555072] Connection from 127.0.0.1:30569 - Data: random_unknown_payload_123 - Attack Type: Suspicious Activity
+[2025-11-18 19:22:19.918547] Connection from 127.0.0.1:30583 - Data: random_unknown_payload_123 - Attack Type: Suspicious Activity
+[2025-11-18 19:22:39.748714] Connection from 127.0.0.1:30593 - Data: random_unknown_payload_123 - Attack Type: Suspicious Activity
+[2025-11-18 19:22:54.226337] Connection from 127.0.0.1:30601 - Data: this is a scan test probe - Attack Type: Network Probe
+[2025-11-18 19:23:09.792937] Connection from 127.0.0.1:30609 - Data: this is a scan test probe - Attack Type: Network Probe
+[2025-11-18 19:24:19.815991] Connection from 127.0.0.1:30643 - Data: this is a scan Network probe - Attack Type: Network Probe
+[2025-11-18 19:29:55.791679] Connection from 127.0.0.1:53549 - Data: SSH-2.0-PuTTY_Release_0.74 - Attack Type: SSH Connection - SSH-2.0-PuTTY_Release_0.74
+[2025-11-18 19:29:58.294024] Connection from 127.0.0.1:53555 - Data: nmap -v -p 22 - Attack Type: Port Scan - NMAP
+[2025-11-18 19:30:00.797125] Connection from 127.0.0.1:53558 - Data: GET /index.html HTTP/1.1 - Attack Type: HTTP Request - GET
+[2025-11-18 19:30:03.299433] Connection from 127.0.0.1:53564 - Data: username=' OR 1=1 -- - Attack Type: SQL Injection - Comment Injection
+[2025-11-18 19:30:05.802938] Connection from 127.0.0.1:53570 - Data: GET /file.php?f=../../etc/passwd - Attack Type: Authentication Probe
+[2025-11-18 19:30:08.305349] Connection from 127.0.0.1:53574 - Data: POST <script>alert(document.cookie)</script> - Attack Type: XSS Attack - Script Tag
+[2025-11-18 19:30:10.807783] Connection from 127.0.0.1:53580 - Data: wget --mirror http://example.com - Attack Type: Wget - Site Mirroring
+[2025-11-18 19:30:13.310761] Connection from 127.0.0.1:53584 - Data: ;whoami - Attack Type: Command Injection - Identity Discovery
+[2025-11-18 19:30:15.814018] Connection from 127.0.0.1:53589 - Data: user anonymous - Attack Type: Authentication Probe
+[2025-11-18 19:30:18.317490] Connection from 127.0.0.1:53594 - Data: dW5pb24gc2VsZWN0IHZlcnNpb24oKQ== - Attack Type: SQL Injection - UNION SELECT (Base64 Encoded)
+[2025-11-18 19:30:20.829863] Connection from 127.0.0.1:53601 - Data: ÿú - Attack Type: Telnet Protocol Negotiation
+[2025-11-18 19:41:05.518885] Connection from 127.0.0.1:30515 - Data: union select 1,2,3 from users - Attack Type: SQL Injection - UNION SELECT
+[2025-11-18 19:41:07.021321] Connection from 127.0.0.1:30519 - Data: drop table users; -- - Attack Type: SQL Injection - DROP TABLE
+[2025-11-18 19:41:08.523795] Connection from 127.0.0.1:30523 - Data: username=' OR '1'='1' -- - Attack Type: SQL Injection - OR Injection
+[2025-11-18 19:41:10.026137] Connection from 127.0.0.1:30527 - Data: GET /page?<script>alert(1)</script> - Attack Type: XSS Attack - Script Tag
+[2025-11-18 19:41:11.528021] Connection from 127.0.0.1:30535 - Data: payload=' onerror='alert(1) - Attack Type: XSS Attack - Error Handler
+[2025-11-18 19:41:13.030089] Connection from 127.0.0.1:30541 - Data: || id - Attack Type: Suspicious Activity
+[2025-11-18 19:41:14.532647] Connection from 127.0.0.1:30545 - Data: /bin/bash -c 'ls' - Attack Type: Command Injection - Bash Shell
+[2025-11-18 19:41:16.035045] Connection from 127.0.0.1:30549 - Data: GET /file.php?f=../../../../../etc/passwd - Attack Type: Authentication Probe
+[2025-11-18 19:41:17.537278] Connection from 127.0.0.1:30554 - Data: GET /page.php?f=%2e%2e%2f%2e%2e%2fetc%2fpasswd - Attack Type: Authentication Probe
+[2025-11-18 19:41:19.041322] Connection from 127.0.0.1:30563 - Data: GET /index.php?file=php://input - Attack Type: File Inclusion - PHP Wrapper
+[2025-11-18 19:41:20.543513] Connection from 127.0.0.1:30567 - Data: GET /page.php?p=file:///etc/hosts - Attack Type: File Inclusion - Local File Inclusion
+[2025-11-18 19:46:31.073465] Connection from 127.0.0.1:22033 - Data: dW5pb24gc2VsZWN0IHZlcnNpb24oKSAtLg== - Attack Type: SQL Injection - UNION SELECT (Base64 Encoded)
+[2025-11-18 19:46:32.576722] Connection from 127.0.0.1:22035 - Data: GET /uploads/cmd.php - Attack Type: Web Shell - Command Shell
+[2025-11-18 19:46:34.079131] Connection from 127.0.0.1:22040 - Data: eval($_POST[cmd]); - Attack Type: XSS Attack - Code Evaluation
+[2025-11-18 19:46:35.581055] Connection from 127.0.0.1:22045 - Data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA - Attack Type: Binary/Non-Printable Data (Base64 Encoded)
+[2025-11-18 19:46:37.083050] Connection from 127.0.0.1:22050 - Data:  - Attack Type: Binary/Non-Printable Data
+[2025-11-18 19:47:43.715463] Connection from 127.0.0.1:22070 - Data: dW5pb24gc2VsZWN0IHZlcnNpb24oKSAtLg== - Attack Type: SQL Injection - UNION SELECT (Base64 Encoded)
+[2025-11-18 19:47:45.218376] Connection from 127.0.0.1:22073 - Data: GET /uploads/cmd.php - Attack Type: Web Shell - Command Shell
+[2025-11-18 19:47:46.720548] Connection from 127.0.0.1:22078 - Data: eval($_POST[cmd]); - Attack Type: XSS Attack - Code Evaluation
+[2025-11-18 19:47:48.222993] Connection from 127.0.0.1:22083 - Data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA - Attack Type: Binary/Non-Printable Data (Base64 Encoded)
+[2025-11-18 19:47:49.725459] Connection from 127.0.0.1:22086 - Data:  - Attack Type: Binary/Non-Printable Data
+[2025-11-18 20:53:04.994564] Connection from 127.0.0.1:33589 - Data: dW5pb24gc2VsZWN0IHZlcnNpb24oKSAtLg== - Attack Type: SQL Injection - UNION SELECT (Base64 Encoded)
+[2025-11-18 20:53:06.496570] Connection from 127.0.0.1:33592 - Data: GET /uploads/cmd.php - Attack Type: Web Shell - Command Shell
+[2025-11-18 20:53:07.999504] Connection from 127.0.0.1:33598 - Data: eval($_POST[cmd]); - Attack Type: XSS Attack - Code Evaluation
+[2025-11-18 20:53:09.501767] Connection from 127.0.0.1:33601 - Data: AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA - Attack Type: Binary/Non-Printable Data (Base64 Encoded)
+[2025-11-18 20:53:11.003668] Connection from 127.0.0.1:33605 - Data:  - Attack Type: Binary/Non-Printable Data
+[2025-11-18 20:53:17.163284] Connection from 127.0.0.1:33615 - Data: union select 1,2,3 from users - Attack Type: SQL Injection - UNION SELECT
+[2025-11-18 20:53:18.665794] Connection from 127.0.0.1:33618 - Data: drop table users; -- - Attack Type: SQL Injection - DROP TABLE
+[2025-11-18 20:53:20.167700] Connection from 127.0.0.1:33624 - Data: username=' OR '1'='1' -- - Attack Type: SQL Injection - OR Injection
+[2025-11-18 20:53:21.670373] Connection from 127.0.0.1:33628 - Data: GET /page?<script>alert(1)</script> - Attack Type: XSS Attack - Script Tag
+[2025-11-18 20:53:23.173783] Connection from 127.0.0.1:33632 - Data: payload=' onerror='alert(1) - Attack Type: XSS Attack - Error Handler
+[2025-11-18 20:53:24.676547] Connection from 127.0.0.1:33636 - Data: || id - Attack Type: Suspicious Activity
+[2025-11-18 20:53:26.179108] Connection from 127.0.0.1:33639 - Data: /bin/bash -c 'ls' - Attack Type: Command Injection - Bash Shell
+[2025-11-18 20:53:27.681547] Connection from 127.0.0.1:33644 - Data: GET /file.php?f=../../../../../etc/passwd - Attack Type: Authentication Probe
+[2025-11-18 20:53:29.184090] Connection from 127.0.0.1:33650 - Data: GET /page.php?f=%2e%2e%2f%2e%2e%2fetc%2fpasswd - Attack Type: Authentication Probe
+[2025-11-18 20:53:30.687168] Connection from 127.0.0.1:33654 - Data: GET /index.php?file=php://input - Attack Type: File Inclusion - PHP Wrapper
+[2025-11-18 20:53:32.189490] Connection from 127.0.0.1:33658 - Data: GET /page.php?p=file:///etc/hosts - Attack Type: File Inclusion - Local File Inclusion
+[2025-11-18 20:53:38.407050] Connection from 127.0.0.1:33666 - Data: SSH-2.0-libssh-0.9.3 - Attack Type: SSH Connection - SSH-2.0-libssh-0.9.3
+[2025-11-18 20:53:39.909028] Connection from 127.0.0.1:33668 - Data: nmap -sV -p 22 - Attack Type: Port Scan - NMAP
+[2025-11-18 20:53:41.411241] Connection from 127.0.0.1:33673 - Data: masscan --rate 10000 192.168.1.0/24 - Attack Type: Port Scan - MASSCAN
+[2025-11-18 20:53:42.913075] Connection from 127.0.0.1:33678 - Data: ncat -lvp 4444 - Attack Type: Network Tool - NCAT
+[2025-11-18 20:53:44.415699] Connection from 127.0.0.1:33683 - Data: ÿûÿûÿý - Attack Type: Telnet Protocol Negotiation
+[2025-11-18 20:53:45.918673] Connection from 127.0.0.1:33686 - Data: USER administrator - Attack Type: Authentication Probe
+[2025-11-18 20:53:47.420926] Connection from 127.0.0.1:33690 - Data: test - Attack Type: Network Probe
+[2025-11-18 20:53:55.553911] Connection from 127.0.0.1:33698 - Data: GET /api/data HTTP/1.1
+Host: example.com - Attack Type: HTTP Request - GET
+[2025-11-18 20:53:57.056074] Connection from 127.0.0.1:33702 - Data: POST /login HTTP/1.1 - Attack Type: Authentication Probe
+[2025-11-18 20:53:58.558595] Connection from 127.0.0.1:33707 - Data: curl -x socks5://proxy.com:9050 http://target.com - Attack Type: Curl - Proxy Request
+[2025-11-18 20:54:00.062627] Connection from 127.0.0.1:33711 - Data: curl --user user:pass http://target.com - Attack Type: Curl - Authentication
+[2025-11-18 20:54:01.565948] Connection from 127.0.0.1:33715 - Data: wget --mirror http://example.com/site - Attack Type: Wget - Site Mirroring
+[2025-11-18 20:54:03.068550] Connection from 127.0.0.1:33720 - Data: wget --no-check-certificate http://example.com - Attack Type: Wget - SSL Bypass
